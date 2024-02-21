@@ -7,7 +7,8 @@ import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button"; 
 import InputGroup from "react-bootstrap/InputGroup"; 
 import FormControl from "react-bootstrap/FormControl"; 
-import ListGroup from "react-bootstrap/ListGroup"; 
+import ListGroup from "react-bootstrap/ListGroup";
+import './styles.css';
 
 function TodoList() {
     const [userInput, setUserInput] = useState("");
@@ -120,7 +121,9 @@ function TodoList() {
 					TODO LIST 
 				</Row> 
 
-				<hr /> 
+				<hr />
+				<div>Number of ToDo's: {todoList.length}</div>
+				<span>&nbsp;</span> 
 				<Row> 
 					<Col md={{ span: 5, offset: 4 }}> 
 						<InputGroup className="mb-3"> 
@@ -135,7 +138,7 @@ function TodoList() {
 							<InputGroup> 
 								<Button 
 									variant="dark"
-									className="mt-2"
+									className="button-add"
 									onClick={addItem} 
 								> 
 									ADD 
@@ -150,7 +153,8 @@ function TodoList() {
 							{todoList.map((item, index) => { 
 								return ( 
 								<div key = {item.todoId} > 
-									<ListGroup.Item 
+									<ListGroup.Item
+									    className="item" 
 										variant="dark"
 										action 
 										style={{display:"flex", 
