@@ -8,6 +8,7 @@ import Button from "react-bootstrap/Button";
 import InputGroup from "react-bootstrap/InputGroup"; 
 import FormControl from "react-bootstrap/FormControl"; 
 import ListGroup from "react-bootstrap/ListGroup";
+import Spinner from 'react-bootstrap/Spinner';
 import './styles.css';
 
 function TodoList() {
@@ -120,7 +121,9 @@ function TodoList() {
 				> 
 					TODO LIST 
 				</Row> 
-
+				{todoList.length === 0 && <Spinner animation="border" role="status">
+				<span className="visually-hidden">Loading...</span>
+				</Spinner>}
 				<hr />
 				<div>Number of ToDo's: {todoList.length}</div>
 				<span>&nbsp;</span> 
