@@ -5,6 +5,13 @@ We can add , edit and delete Todos in this application and see the count of the 
 The application is hosted on github pages - [link](https://chandrimakabiraj.github.io/Todo-App/)
 Do checkout !!!
 
+To install and start the application on your local
+- clone this repository
+- run "cd Todo-App"
+- run "npm install"
+- run "npm start"
+
 ![Alt text](/images/todo-image.jpeg)
+
 
 
