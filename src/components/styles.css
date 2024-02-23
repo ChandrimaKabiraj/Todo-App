@@ -5,3 +5,9 @@
 .item {
     border-radius: 1px;
 }
+.login,
+.logout {
+    border: 2px solid blue;
+    border-radius: 5px;
+    margin-right: 10px;
+}
