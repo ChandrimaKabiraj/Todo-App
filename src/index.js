@@ -1,17 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Auth0Provider } from '@auth0/auth0-react';
-import { GoogleOAuthProvider } from '@react-oauth/google';
+// import { GoogleOAuthProvider } from '@react-oauth/google';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <GoogleOAuthProvider clientId="627138249715-4tpqa1vblva5ksufqubboc25ur39rmeg.apps.googleusercontent.com">
+  <Auth0Provider
+    domain="dev-37pksmh3d55j3c1f.eu.auth0.com"
+    clientId="lYgLMYxcKtTkfjFZVm4XKHyRRqbkUcUa"
+    authorizationParams={{
+      redirect_uri: window.location.origin
+    }}
+  >
     <App />
-  </GoogleOAuthProvider>
-    
+    </Auth0Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function

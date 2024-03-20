@@ -9,12 +9,16 @@ import InputGroup from "react-bootstrap/InputGroup";
 import FormControl from "react-bootstrap/FormControl"; 
 import ListGroup from "react-bootstrap/ListGroup";
 import Spinner from 'react-bootstrap/Spinner';
+import AuthLogin from './authLogin.jsx';
+import AuthLogout from './authLogout.jsx';
+import Profile from './Profile.jsx';
 import './styles.css';
 
 function TodoList() {
     const [userInput, setUserInput] = useState("");
 	const [todoList, setTodoList] = useState([]);
-	const [change, setChange] = useState(false);	
+	const [change, setChange] = useState(false);
+	const [isLogin, setIsLogin] = useState(false);	
 	useEffect(() => {
 		showTodos();
 	},[change])
@@ -109,7 +113,8 @@ function TodoList() {
 
 	
 		return ( 
-			<Container> 
+			<Container>
+				<span>
 				<Row 
 					style={{ 
 						display: "flex", 
@@ -119,8 +124,17 @@ function TodoList() {
 						fontWeight: "bolder", 
 					}} 
 				> 
-					TODO LIST 
+					TODO LIST
+					 
 				</Row> 
+				</span>
+				<span>
+				<div className="auth">
+						{isLogin === false ? <AuthLogin setIsLogin={setIsLogin} isLogin={isLogin}/> : ''}
+						{isLogin === true ? <AuthLogout/> : ''}
+						<Profile/>
+				</div>
+				</span>
 				{todoList.length === 0 && <Spinner animation="border" role="status">
 				<span className="visually-hidden">Loading...</span>
 				</Spinner>}
